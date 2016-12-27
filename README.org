@@ -1,0 +1,31 @@
+#+TITLE: achso.el --- AchSo Frontend for GNU Emacs
+#+AUTHOR: Yuto Kisuge <mail@yo.eki.do>
+
+achso.el is an AchSo frontend for GNU Emacs.
+
+* Install
+
+** Using el-get (recommended)
+
+1. Add =(el-get-bundle kissge/achso-emacs)= to your init file.
+2. Install [[https://github.com/kissge/achso][AchSo backend]].
+
+** Naive method
+
+1. Copy =achso.el= to somewhere Emacs can read.
+2. Install [[https://github.com/kissge/achso][AchSo backend]].
+
+* Basic Usage
+
+1. Make a contest directory and open it with Emacs.
+2. After a contest starts, type =M-x achso-start-contest= to initialize the contest directory.
+3. Write code and save to the contest directory. Compile it if necessary.
+4. Type =C-c C-1= to invoke automatic testing. If successful, submit the source code.
+5. Check the progress of the system judge, which is automatically shown and updated.
+6. You can also submit your code without automatic testing (=C-c C-2=).
+7. You can also update the progress of the system judge (=C-c C-3=).
+
+* To Do
+
+- Add more functionalities
+- Documentation

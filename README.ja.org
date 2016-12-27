@@ -1,0 +1,31 @@
+#+TITLE: achso.el --- AchSo Frontend for GNU Emacs
+#+AUTHOR: Yuto Kisuge <mail@yo.eki.do>
+
+achso.elはGNU Emacs用のAchSoフロントエンドです。
+
+* インストール
+
+** el-getを使う場合（推奨）
+
+1. .emacsに =(el-get-bundle kissge/achso-emacs)= と追加する
+2. AchSoバックエンドをインストールする
+
+** 手動で追加する場合
+
+1. =achso.el= をEmacsのパスの通っているディレクトリのどこかにコピーする
+2. AchSoバックエンドをインストールする
+
+* 基本的な使い方
+
+1. コンテスト用のディレクトリを作成し、Emacsで開いておく
+2. コンテストが開始したら =M-x achso-start-contest= でディレクトリの初期設定を行う
+3. コードを書けたらディレクトリ内に保存し、必要ならコンパイルする
+4. =C-c C-1= で自動テストを走らせ、すべてのテストが通った場合はそのまま提出する
+5. ジャッジの進行状況が表示される
+6. =C-c C-2= でテストせずに提出することも可能
+7. =C-c C-3= でジャッジの進行状況を直ちに確認できる
+
+* To Do
+
+- 機能追加
+- ドキュメント整備
