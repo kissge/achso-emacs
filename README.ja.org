@@ -3,6 +3,8 @@
 
 achso.elはGNU Emacs用のAchSoフロントエンドです。
 
+[[https://github.com/kissge/achso-emacs/wiki/screen_shot.gif]]
+
 * インストール
 
 ** el-getを使う場合（推奨）

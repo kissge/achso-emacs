@@ -3,6 +3,8 @@
 
 achso.el is an AchSo frontend for GNU Emacs.
 
+[[https://github.com/kissge/achso-emacs/wiki/screen_shot.gif]]
+
 * Install
 
 ** Using el-get (recommended)
