@@ -99,7 +99,7 @@
 
 (defun achso-extract-sample-to-directory (directory)
   (interactive "DPath to directory: ")
-  (let-alist (achso-check-contest-started-and-invoke "sample" achso-domain directory)
+  (let-alist (achso-check-contest-started-and-invoke "sample" achso-domain (expand-file-name directory))
     .files))
 
 (defun achso-extract-sample-to-working-directory ()
@@ -150,7 +150,7 @@
                               nil t nil 'achso-task-history
                               default-task-id))
            (read-file-name (format "Command (%s): " buffer-file-name) nil nil buffer-file-name))))
-  (let-alist (achso-check-contest-started-and-invoke "test" task-id (expand-file-name command) default-directory)
+  (let-alist (achso-check-contest-started-and-invoke "test" task-id (expand-file-name command) (expand-file-name achso-working-directory))
     (if (zerop .wrong)
         (if (zerop .correct)
             (prog2 (message "No tests were run") nil)
