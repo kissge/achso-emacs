@@ -4,7 +4,7 @@
 
 ;; Author: Yuto Kisuge <mail@yo.eki.do>
 ;; URL: https://github.com/kissge/achso-emacs
-;; Version: 0.0.1
+;; Version: 0.0.2
 
 ;; This program is licensed under the MIT License (X11 License).
 
@@ -257,7 +257,7 @@
     (set-variable 'achso-tasks .tasks)))
 
 (defun achso-guess-task-id-from-file-name (filename)
-  (if achso-tasks
+  (if (and filename achso-tasks)
       (let* ((task-id-list (achso-task-id-list))
              (base (file-name-sans-extension (file-name-base filename)))
              (base-upper (upcase base))
