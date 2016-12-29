@@ -67,7 +67,7 @@
     (message "Fetching language list...")
     (achso-get-language-list)
     (message "Extracting sample inputs and outputs...")
-    (achso-extract-sample-to-current-directory))
+    (achso-extract-sample-to-working-directory))
 
   ;; now everything was OK, achso-domain can be set safely
   (set-variable 'achso-domain domain)
@@ -98,14 +98,17 @@
       (achso-minor-mode init)))
 
 (defun achso-extract-sample-to-directory (directory)
-  ;; (interactive "DPath to directory: ")
+  (interactive "DPath to directory: ")
   (let-alist (achso-check-contest-started-and-invoke "sample" achso-domain directory)
-    (message "%s and other %d files were saved."
-             (aref .files 0) (1- (length .files)))))
+    .files))
 
-(defun achso-extract-sample-to-current-directory ()
+(defun achso-extract-sample-to-working-directory ()
   (interactive)
-  (achso-extract-sample-to-directory default-directory))
+  (let ((files (achso-extract-sample-to-directory achso-working-directory)))
+    (if (zerop (length files))
+        (message "No samples found.")
+      (message "%s and other %d files were saved."
+               (aref files 0) (1- (length files))))))
 
 (defun achso-submit (task-id filename language)
   (interactive
