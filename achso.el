@@ -4,7 +4,7 @@
 
 ;; Author: Yuto Kisuge <mail@yo.eki.do>
 ;; URL: https://github.com/kissge/achso-emacs
-;; Version: 0.0.2
+;; Version: 0.0.3
 
 ;; This program is licensed under the MIT License (X11 License).
 
@@ -60,6 +60,7 @@
 (defun achso-start-contest (domain)
   (interactive "sDomain (e.g. abc001): ")
   (set-variable 'achso-domain nil)
+  (set-variable 'achso-working-directory default-directory)
 
   (let ((achso-domain domain))
     (message "Fetching task list...")
@@ -72,7 +73,6 @@
   ;; now everything was OK, achso-domain can be set safely
   (set-variable 'achso-domain domain)
   (set-variable 'achso-lighter (format " Ach[%s]" domain))
-  (set-variable 'achso-working-directory default-directory)
 
   (achso-mode 1)
 
